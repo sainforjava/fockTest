@@ -1,0 +1,29 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8765
+spring:
+  application:
+    name: service-feign
+  resources:
+    static-locations: classpath:/template/
+  thymeleaf:
+     prefix: classpath:/template/
+#  http:
+#    multipart:
+#      enabled: true
+#      max-file-size: 3MB
+#      max-request-size: 3MB
+     redis:
+       host: locaolhost
+       port: 6379
+       pool:
+         max-idle: 100
+         min-idle: 1
+         max-active: 1000
+         max-wait: -1
+feign:
+  hystrix:
+    enabled: true
